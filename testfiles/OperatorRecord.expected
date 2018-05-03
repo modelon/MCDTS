@@ -1,0 +1,6 @@
+Complex.'+', Complex.'constructor'.fromReal
+Complex.'=='
+Complex.'0'
+Complex.'String'
+Complex.'-'.subtract
+Complex.'-'.negate
