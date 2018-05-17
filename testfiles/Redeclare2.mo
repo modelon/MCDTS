@@ -201,4 +201,34 @@ package P
         G2.M m;
     end M7;
     
+    model H1
+        model M
+            function f
+                output Real y;
+            algorithm
+                y := 1;
+            end f;
+        end M;
+        
+        replaceable M m;
+        Real x = m.f();
+    end H1;
+    
+    model H2
+        extends H1;
+        redeclare M2 m;
+        
+        model M2
+            function f
+                output Real y;
+            algorithm
+                y := 2;
+            end f;
+        end M2;
+    end H2;
+
+    model M8 // Tests access of function in replacing component with redeclare prefix
+        H2 h;
+    end M8;
+    
 end P;
